@@ -1,0 +1,43 @@
+{
+  "url": "https://www.treccani.it/vocabolario/stravagante/",
+  "lemma": "stravagante",
+  "pos": "agg.",
+  "etimo": "dal lat. mediev. extravagans -antis: v. estravagante",
+  "etimo_links": [
+    [
+      "estravagante",
+      "estravagante"
+    ]
+  ],
+  "senses": [
+    {
+      "num": "1",
+      "gloss": "Di ciò che divaga, che esce fuori dai limiti, o da determinati limiti, dal comune, dalla consuetudine, dal normale",
+      "qual": "letter. o raro."
+    },
+    {
+      "num": "2",
+      "gloss": "Di persona che si comporta in modo bizzarro o fuori del normale, o che vaga o divaga facilmente col pensiero e con la fantasia",
+      "qual": ""
+    }
+  ],
+  "derived": [],
+  "opera": "Vocabolario on line",
+  "fetched": "2026-11-18T19:36:25.054121",
+  "today": "2026-11-18",
+  "etimo_source": "lat. mediev. extravagans -antis",
+  "etimo_comps": [
+    {
+      "form": "extra",
+      "gloss": "fuori"
+    },
+    {
+      "form": "part. pres. di vagare",
+      "gloss": "vagare"
+    }
+  ],
+  "etimo_xref": "extravagans",
+  "followed": "estravagante",
+  "syllabic": "stra·va´·gan·te",
+  "stress": 1
+}
