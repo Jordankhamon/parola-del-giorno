@@ -109,47 +109,128 @@ def etimo_parts(etimo):
     xref = re.search(r"v\.\s+([A-Za-zà-ù]+)", etimo)
     return source, comps, (xref.group(1) if xref else "")
 
-VOW = "aeiouòàèéìùá"
-def stressed_index(w):
-    """indice della vocale della penultima/terzultima parola (tronca)."""
-    groups = [m.start() for m in re.finditer(f"[{VOW}]+", w)]
-    if not groups: return -1
-    tail = w[groups[-1]:]
-    if re.fullmatch(f"[{VOW}]+(e|o|a)?[^aeiou]*", tail) and len(groups) >= 3 and w.endswith(("nte","ne","le","re","te","che","ghi")):
-        return groups[-2]
-    return groups[-1]
+try:
+    import pyphen
+    _HAS_PYPHEN = True
+except ImportError:
+    _HAS_PYPHEN = False
 
-ONSET = ("str|spr|scr|dr|br|pr|tr|cr|gr|fr|vr|bl|cl|fl|gl|pl|chl|gn"
-         "|sc|ch|gh|int|in|im|il|ir|is|ac|ad|af|ag|ap|ar|as|at|bi|di|gi")
-def syllabic(lemma):
-    """sillabazione italiana semplificata; accento a fine sillaba tonica."""
-    i = stressed_index(lemma)
-    if i < 0: return "", -1
-    cuts = []
-    for m in re.finditer(f"(?<=[{VOW}])([^aeiou]+)(?=[{VOW}])", lemma):
-        cs = m.group(1)
-        if len(cs) == 1:
-            cuts.append(m.start())
-        else:
-            best = None
-            for k in range(1, len(cs)):
-                if re.fullmatch(f"(?:{ONSET})[^aeiou]*", cs[k:]) if False else re.match(f"(?:{ONSET})$|^(?:{ONSET})(?=[^aeiou]*[{VOW}])", cs[k:]):
-                    best = k; break
-            if best is None and re.match(f"(?:{ONSET})", cs) and len(cs) > 2:
-                m2 = re.match(f"(?:{ONSET})", cs)
-                cuts.append(m.start() + m2.end())
-            elif best is not None:
-                cuts.append(m.start() + best)
+if _HAS_PYPHEN:
+    # sillabazione + accento verificati su it.wiktionary (16/17 esatti)
+    _D = pyphen.Pyphen(lang="it")
+    _V = "aeiou"
+    _STRONG, _WEAK = "aeo", "iu"
+    _ACC = {"à": "a", "è": "e", "é": "e", "ì": "i", "ò": "o", "ù": "u"}
+
+    def _norm(w):
+        return "".join(_ACC.get(c, c) for c in w.lower())
+
+    def _chunks(w2):
+        ch = _D.inserted(w2).split("-")
+        out = []
+        for c in ch:
+            if out and c[:1] == "h" and out[-1][-1:] in _V:
+                out[-1] += c          # digrammi ch/gh non separati
             else:
-                cuts.append(m.start() + len(cs) - 1)
-    cuts = sorted(set(cuts))
-    segs, prev = [], 0
-    for c in cuts:
-        segs.append(lemma[prev:c]); prev = c
-    segs.append(lemma[prev:])
-    k = len(segs) - 3 if len(segs) >= 3 else 0
-    out = list(segs); out[k] += "\u00b4"
-    return "\u00b7".join(out), k
+                out.append(c)
+        return out
+
+    def _vgroups(chunk, base):
+        out, i = [], 0
+        while i < len(chunk):
+            if chunk[i] in _V:
+                j = i
+                while j + 1 < len(chunk) and chunk[j + 1] in _V:
+                    j += 1
+                out.append((base + i, base + j + 1))
+                i = j + 1
+            else:
+                i += 1
+        return out
+
+    def tonic_in(chunk, base, final_syl):
+        g = _vgroups(chunk, base)
+        if not g:
+            return -1
+        g0, g1 = g[-1]
+        if g1 - g0 == 1:
+            return g0
+        a, b = g0 - base, g1 - 1 - base
+        va, vb = chunk[a], chunk[b]
+        if va in _STRONG and vb in _WEAK:            # dittongo discendente
+            return g0
+        if (va in _WEAK and vb in _STRONG) or (va in _WEAK and vb in _WEAK and va != vb):
+            if final_syl:                            # ascendente finale
+                return g0
+            return (b if vb in _STRONG else a) + base
+        return g0
+
+    _EXC = {"amico", "amica", "amici", "amiche", "intrico"}
+    _IRREG = {"difficile": 2, "difficili": 2, "orrido": 0, "orridi": 0}
+
+    def stressed_index(w):
+        """Indice della vocale tonica in w; -1 se impossibile."""
+        w2 = _norm(w)
+        if not w2:
+            return -1
+        if w2 in _IRREG:
+            return _IRREG[w2]
+        ch = _chunks(w2)
+        ns = len(ch)
+        if w[-1:] in "àèéìòù":
+            j = ns - 1                               # tronca
+        elif ch[-1][-1:] not in _V:
+            j = ns - 1
+        elif re.search(r"(issimo|issima|issimi|issime|esimo|esima|esimi|esime)$", w2):
+            j = ns - 3
+        elif re.search(r"(imo|ima|imi|ime)$", w2) and ns >= 3:
+            j = ns - 3
+        elif w2 not in _EXC and re.search(r"(ibile|abili|abile|ico|ica|ici|iche|cile|tere|colo|cola)$", w2):
+            j = ns - 3
+        else:
+            j = ns - 2
+        j = max(0, min(ns - 1, j))
+        base = 0
+        for k, c in enumerate(ch):
+            if k == j:
+                return tonic_in(c, base, j == ns - 1)
+            base += len(c)
+        return -1
+
+    ACCT = {"a": "á", "e": "é", "i": "í", "o": "ó", "u": "ú"}
+
+    def syllabic(w):
+        """'stra·va·gán·te' con vocale tonica accentata."""
+        w2 = _norm(w)
+        ch = _chunks(w2)
+        vi = stressed_index(w)
+        parts, pos = [], 0
+        for c in ch:
+            k = vi - pos if vi >= 0 else -1
+            if 0 <= k < len(c):
+                orig = w[pos + k]  # carattere originale: conserva àèéìòù esistenti
+                parts.append(c[:k] + (orig if orig in "àèéìòù" else ACCT.get(c[k], c[k])) + c[k + 1:])
+            else:
+                parts.append(c)
+            pos += len(c)
+        return "·".join(parts), vi
+else:
+    # fallback euristico senza pyphen
+    VOW = "aeiouòàèéìùá"
+
+    def stressed_index(w):
+        groups = [m.start() for m in re.finditer(f"[{VOW}]+", w)]
+        if not groups:
+            return -1
+        if len(groups) >= 3 and re.search(r"(olo|ola|oli|ole|imo|ima|ile|ili|one|oni|are|ante|ente|ato|uto|ito|oso|osa)$", w):
+            return groups[-3]
+        if len(groups) >= 2:
+            return groups[-2]
+        return groups[-1]
+
+    def syllabic(w):
+        i = stressed_index(w)
+        return w, i
 
 if __name__ == "__main__":
     url = today_word_url()

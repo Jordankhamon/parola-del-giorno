@@ -112,7 +112,7 @@ def main():
         x = M
         parts = syl.split("\u00b7")
         for i, p_ in enumerate(parts):
-            col_ = ACCENT if "\u00b4" in p_ else GREY
+            col_ = ACCENT if ("\u00b4" in p_ or any(ch in "\u00e1\u00e9\u00ed\u00f3\u00fa\u00e0\u00e8\u00e9\u00ec\u00f2\u00f9" for ch in p_)) else GREY
             d.text((x, y), p_ + ("\u00b7" if i < len(parts) - 1 else ""), font=f_syl, fill=col_)
             x += d.textlength(p_ + ("\u00b7" if i < len(parts) - 1 else ""), f_syl)
     if pos:
