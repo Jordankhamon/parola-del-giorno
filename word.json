@@ -1,43 +1,28 @@
 {
-  "url": "https://www.treccani.it/vocabolario/stravagante/",
-  "lemma": "stravagante",
-  "pos": "agg.",
-  "etimo": "dal lat. mediev. extravagans -antis: v. estravagante",
-  "etimo_links": [
-    [
-      "estravagante",
-      "estravagante"
-    ]
-  ],
+  "url": "https://www.treccani.it/vocabolario/chimera/",
+  "lemma": "chimèra",
+  "pos": "",
+  "etimo": "[dal lat. chimaera, gr. χίμαιρα, propr. «capra»]. – 1. a. Nella mitologia greca, mostro con testa e corpo di leone, una seconda testa di capra sulla schiena, e una coda di serpente fornita anch’essa di testa, raffigurata spesso nell’arte antica in atto di vomitare fuoco; era considerata come un’incarnazione di forze fisiche distruttrici (vulcani o tempeste). b. In araldica, fi",
+  "etimo_links": [],
   "senses": [
     {
-      "num": "1",
-      "gloss": "Di ciò che divaga, che esce fuori dai limiti, o da determinati limiti, dal comune, dalla consuetudine, dal normale",
-      "qual": "letter. o raro."
+      "num": "2",
+      "gloss": "Idea senza fondamento, sogno vano, fantasticheria strana, utopia",
+      "qual": ""
     },
     {
-      "num": "2",
-      "gloss": "Di persona che si comporta in modo bizzarro o fuori del normale, o che vaga o divaga facilmente col pensiero e con la fantasia",
+      "num": "3",
+      "gloss": "In zoologia, genere (lat",
       "qual": ""
     }
   ],
   "derived": [],
   "opera": "Vocabolario on line",
-  "fetched": "2026-11-18T23:09:46.251131",
-  "today": "2026-11-18",
-  "etimo_source": "lat. mediev. extravagans -antis",
-  "etimo_comps": [
-    {
-      "form": "extra",
-      "gloss": "fuori"
-    },
-    {
-      "form": "part. pres. di vagare",
-      "gloss": "vagare"
-    }
-  ],
-  "etimo_xref": "extravagans",
-  "followed": "estravagante",
-  "syllabic": "stra·va·gán·te",
-  "stress": 7
+  "fetched": "2026-11-19T07:31:10.187289",
+  "today": "2026-11-19",
+  "etimo_source": "lat. chimaera",
+  "etimo_comps": [],
+  "etimo_xref": "",
+  "syllabic": "chi·mè·ra",
+  "stress": 4
 }
