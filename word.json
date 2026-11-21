@@ -1,28 +1,26 @@
 {
-  "url": "https://www.treccani.it/vocabolario/chimera/",
-  "lemma": "chimèra",
+  "url": "https://www.treccani.it/vocabolario/sotterfugio/",
+  "lemma": "sotterfùgio",
   "pos": "",
-  "etimo": "[dal lat. chimaera, gr. χίμαιρα, propr. «capra»]. – 1. a. Nella mitologia greca, mostro con testa e corpo di leone, una seconda testa di capra sulla schiena, e una coda di serpente fornita anch’essa di testa, raffigurata spesso nell’arte antica in atto di vomitare fuoco; era considerata come un’incarnazione di forze fisiche distruttrici (vulcani o tempeste). b. In araldica, fi",
+  "etimo": "[dal lat. mediev. subterfugium, der. del lat. subterfugĕre «sfuggire» (comp. di subter «sotto» e fugĕre «fuggire»)]. – Modo ingegnoso di sottrarsi a un pericolo o a un danno; per estens., espediente, stratagemma, raggiro basato sulla menzogna, sulla reticenza o sull’inganno, a cui si ricorre per conseguire un fine più o meno lecito senza compromettersi: usare un s.</",
   "etimo_links": [],
-  "senses": [
-    {
-      "num": "2",
-      "gloss": "Idea senza fondamento, sogno vano, fantasticheria strana, utopia",
-      "qual": ""
-    },
-    {
-      "num": "3",
-      "gloss": "In zoologia, genere (lat",
-      "qual": ""
-    }
-  ],
+  "senses": [],
   "derived": [],
   "opera": "Vocabolario on line",
-  "fetched": "2026-11-20T07:30:14.678210",
-  "today": "2026-11-20",
-  "etimo_source": "lat. chimaera",
-  "etimo_comps": [],
-  "etimo_xref": "",
-  "syllabic": "chi·mè·ra",
-  "stress": 4
+  "fetched": "2026-11-21T07:32:12.276545",
+  "today": "2026-11-21",
+  "etimo_source": "lat. mediev. subterfugium",
+  "etimo_comps": [
+    {
+      "form": "subter",
+      "gloss": "sotto"
+    },
+    {
+      "form": "fugĕre",
+      "gloss": "fuggire"
+    }
+  ],
+  "etimo_xref": "subterfugium",
+  "syllabic": "sot·ter·fù·gio",
+  "stress": 7
 }
