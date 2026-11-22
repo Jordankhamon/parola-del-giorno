@@ -1,26 +1,28 @@
 {
-  "url": "https://www.treccani.it/vocabolario/sotterfugio/",
-  "lemma": "sotterfùgio",
+  "url": "https://www.treccani.it/vocabolario/bruma1/",
+  "lemma": "bruma",
   "pos": "",
-  "etimo": "[dal lat. mediev. subterfugium, der. del lat. subterfugĕre «sfuggire» (comp. di subter «sotto» e fugĕre «fuggire»)]. – Modo ingegnoso di sottrarsi a un pericolo o a un danno; per estens., espediente, stratagemma, raggiro basato sulla menzogna, sulla reticenza o sull’inganno, a cui si ricorre per conseguire un fine più o meno lecito senza compromettersi: usare un s.</",
+  "etimo": "[dal lat. bruma «solstizio d’inverno», contraz. di *brevŭma, cioè brevissĭma (dies); nel sign. 2, per influsso del fr. brume]. – 1. ant. Il periodo più freddo dell’inverno, e in genere il periodo invernale: Foco che m’arde a la più algente b. (Petrarca); non guari avanti la b. si dipartirono (Bembo). 2. Nebbia, foschìa: le b<",
   "etimo_links": [],
-  "senses": [],
-  "derived": [],
-  "opera": "Vocabolario on line",
-  "fetched": "2026-11-21T07:32:12.276545",
-  "today": "2026-11-21",
-  "etimo_source": "lat. mediev. subterfugium",
-  "etimo_comps": [
+  "senses": [
     {
-      "form": "subter",
-      "gloss": "sotto"
+      "num": "1",
+      "gloss": "Il periodo più freddo dell’inverno, e in genere il periodo invernale",
+      "qual": ""
     },
     {
-      "form": "fugĕre",
-      "gloss": "fuggire"
+      "num": "2",
+      "gloss": "Nebbia, foschìa",
+      "qual": ""
     }
   ],
-  "etimo_xref": "subterfugium",
-  "syllabic": "sot·ter·fù·gio",
-  "stress": 7
+  "derived": [],
+  "opera": "Vocabolario on line",
+  "fetched": "2026-11-22T07:30:18.978900",
+  "today": "2026-11-22",
+  "etimo_source": "lat.",
+  "etimo_comps": [],
+  "etimo_xref": "",
+  "syllabic": "brú·ma",
+  "stress": 2
 }
