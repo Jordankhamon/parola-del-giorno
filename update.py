@@ -41,10 +41,29 @@ def parse_entry(url):
         lemma, pos, etimo_raw = m.group(1), m.group(2), m.group(3)
         tail = c[m.end():]
     else:
-        m2 = re.search(r"\[(dal|der\.|comp\.|var\.|lat\.|gr\.)", c)
-        lemma = strip_html(re.search(r"<b>(.+?)</b>", c).group(1))
-        pos, etimo_raw = "", strip_html(c[m2.start():c.find("] –") if "] –" in c else m2.start()+400])
-        tail = c[c.find("] –") + 3:] if "] –" in c else c
+        mb = re.search(r"<b>(.+?)</b>", c)
+        lemma = strip_html(mb.group(1))
+        # l'etimologia e' la prima [...] dopo il lemma: i marcatori non sono un
+        # elenco chiuso (es. "adattam. dell'ingl." per princisbécco) -> non fare
+        # affidamento su keyword fisse, prendere il primo blocco quadre
+        p = c.find("[", mb.end())
+        q = c.find("]", p) if p >= 0 else -1
+        while q >= 0:
+            n = c.find("[", p + 1, q)
+            if n >= 0:
+                q = c.find("]", q + 1)
+            else:
+                break
+        if p >= 0 and q >= 0:
+            pos, etimo_raw = "", c[p:q + 1]
+            tail = c[q + 1:]
+        else:
+            m2 = re.search(r"\[(dal|der\.|comp\.|var\.|lat\.|gr\.)", c)
+            if m2:
+                pos, etimo_raw = "", strip_html(c[m2.start():c.find("] –") if "] –" in c else m2.start()+400])
+                tail = c[c.find("] –") + 3:] if "] –" in c else c
+            else:
+                pos, etimo_raw, tail = "", "", c
     # etimo: conserva i link testuali (es. rinvio a estravagante)
     etimo_links = re.findall(r'href="[^"]*/vocabolario/([^"/]+)/?"[^>]*>([^<]+)</a>', etimo_raw)
     etimo = strip_html(etimo_raw)

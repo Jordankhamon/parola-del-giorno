@@ -1,28 +1,28 @@
 {
-  "url": "https://www.treccani.it/vocabolario/bruma1/",
-  "lemma": "bruma",
+  "url": "https://www.treccani.it/vocabolario/princisbecco/",
+  "lemma": "princisbécco",
   "pos": "",
-  "etimo": "[dal lat. bruma «solstizio d’inverno», contraz. di *brevŭma, cioè brevissĭma (dies); nel sign. 2, per influsso del fr. brume]. – 1. ant. Il periodo più freddo dell’inverno, e in genere il periodo invernale: Foco che m’arde a la più algente b. (Petrarca); non guari avanti la b. si dipartirono (Bembo). 2. Nebbia, foschìa: le b<",
+  "etimo": "[adattam. dell’ingl. pinchbeck, dal nome dell’inventore, l’orologiaio londinese Christopher Pinchbeck († 1732)]",
   "etimo_links": [],
   "senses": [
     {
       "num": "1",
-      "gloss": "Il periodo più freddo dell’inverno, e in genere il periodo invernale",
+      "gloss": "Lega di rame, zinco e stagno del tipo del tombacco, di aspetto simile all’oro, usata per la produzione di oggetti che imitano l’oro, per lamine sottili in sostituzione dell’oro, per fili da",
       "qual": ""
     },
     {
       "num": "2",
-      "gloss": "Nebbia, foschìa",
+      "gloss": "In senso estens",
       "qual": ""
     }
   ],
   "derived": [],
   "opera": "Vocabolario on line",
-  "fetched": "2026-11-22T07:30:18.978900",
-  "today": "2026-11-22",
-  "etimo_source": "lat.",
+  "fetched": "2026-11-24T07:32:01.543059",
+  "today": "2026-11-24",
+  "etimo_source": "ingl. pinchbeck",
   "etimo_comps": [],
   "etimo_xref": "",
-  "syllabic": "brú·ma",
-  "stress": 2
+  "syllabic": "prin·ci·sbéc·co",
+  "stress": 8
 }
