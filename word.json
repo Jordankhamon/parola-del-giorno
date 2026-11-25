@@ -1,28 +1,33 @@
 {
-  "url": "https://www.treccani.it/vocabolario/princisbecco/",
-  "lemma": "princisbécco",
+  "url": "https://www.treccani.it/vocabolario/diavolo/",
+  "lemma": "diàvolo",
   "pos": "",
-  "etimo": "[adattam. dell’ingl. pinchbeck, dal nome dell’inventore, l’orologiaio londinese Christopher Pinchbeck († 1732)]",
+  "etimo": "[dal lat. tardo, eccles., diabŏlus, gr. διάβολος, propr. «calunniatore» (der. di διαβάλλω «gettare attraverso, calunniare»), adoperato nel gr. crist. per tradurre l’ebr. śāṭān «contraddittore, oppositore»]",
   "etimo_links": [],
   "senses": [
     {
       "num": "1",
-      "gloss": "Lega di rame, zinco e stagno del tipo del tombacco, di aspetto simile all’oro, usata per la produzione di oggetti che imitano l’oro, per lamine sottili in sostituzione dell’oro, per fili da",
+      "gloss": "Spirito del male, nemico di Dio e degli uomini, che egli tenta per indurli a peccare",
       "qual": ""
     },
     {
       "num": "2",
-      "gloss": "In senso estens",
+      "gloss": "Come locuz",
       "qual": ""
     }
   ],
   "derived": [],
   "opera": "Vocabolario on line",
-  "fetched": "2026-11-24T07:32:01.543059",
-  "today": "2026-11-24",
-  "etimo_source": "ingl. pinchbeck",
-  "etimo_comps": [],
+  "fetched": "2026-11-25T07:47:15.473914",
+  "today": "2026-11-25",
+  "etimo_source": "lat. tardo",
+  "etimo_comps": [
+    {
+      "form": "διαβάλλω",
+      "gloss": "gettare attraverso, calunniare"
+    }
+  ],
   "etimo_xref": "",
-  "syllabic": "prin·ci·sbéc·co",
-  "stress": 8
+  "syllabic": "dia·vó·lo",
+  "stress": 4
 }
