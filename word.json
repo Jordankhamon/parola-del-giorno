@@ -1,33 +1,33 @@
 {
-  "url": "https://www.treccani.it/vocabolario/diavolo/",
-  "lemma": "diàvolo",
+  "url": "https://www.treccani.it/vocabolario/intricare/",
+  "lemma": "intricare",
   "pos": "",
-  "etimo": "[dal lat. tardo, eccles., diabŏlus, gr. διάβολος, propr. «calunniatore» (der. di διαβάλλω «gettare attraverso, calunniare»), adoperato nel gr. crist. per tradurre l’ebr. śāṭān «contraddittore, oppositore»]",
+  "etimo": "[lat. intrīcare «imbarazzare, confondere, imbrogliare», der. di tricae -arum «intrighi, imbrogli»]",
   "etimo_links": [],
   "senses": [
     {
       "num": "1",
-      "gloss": "Spirito del male, nemico di Dio e degli uomini, che egli tenta per indurli a peccare",
+      "gloss": "Avviluppare insieme disordinatamente, aggrovigliare, arruffare",
       "qual": ""
     },
     {
       "num": "2",
-      "gloss": "Come locuz",
+      "gloss": "Avviluppare creando impaccio, e in genere impacciare, ostacolare",
       "qual": ""
     }
   ],
   "derived": [],
   "opera": "Vocabolario on line",
-  "fetched": "2026-11-25T07:47:15.473914",
-  "today": "2026-11-25",
-  "etimo_source": "lat. tardo",
+  "fetched": "2026-11-27T08:07:08.405209",
+  "today": "2026-11-27",
+  "etimo_source": "lat.",
   "etimo_comps": [
     {
-      "form": "διαβάλλω",
-      "gloss": "gettare attraverso, calunniare"
+      "form": "tricae -arum",
+      "gloss": "intrighi, imbrogli"
     }
   ],
   "etimo_xref": "",
-  "syllabic": "dia·vó·lo",
-  "stress": 4
+  "syllabic": "in·tri·cá·re",
+  "stress": 6
 }
