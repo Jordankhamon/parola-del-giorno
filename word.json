@@ -1,33 +1,33 @@
 {
-  "url": "https://www.treccani.it/vocabolario/intricare/",
-  "lemma": "intricare",
+  "url": "https://www.treccani.it/vocabolario/anatema/",
+  "lemma": "anatèma",
   "pos": "",
-  "etimo": "[lat. intrīcare «imbarazzare, confondere, imbrogliare», der. di tricae -arum «intrighi, imbrogli»]",
+  "etimo": "[dal lat. tardo anathēma e anathĕma, gr. ἀνάϑημα «offerta votiva», poi ἀνάϑεμα «maledizione», der. di ἀνατίϑημι «dedicare»]",
   "etimo_links": [],
   "senses": [
     {
       "num": "1",
-      "gloss": "Avviluppare insieme disordinatamente, aggrovigliare, arruffare",
+      "gloss": "Presso i Greci, offerta deposta nel tempio di una divinità, e costituita in origine da frutta o da animali, più tardi anche da armi, statue, ecc",
       "qual": ""
     },
     {
       "num": "2",
-      "gloss": "Avviluppare creando impaccio, e in genere impacciare, ostacolare",
+      "gloss": "Nel Cristianesimo, bando dalla Chiesa, scomunica, soprattutto in quanto rivolta contro eretici e scismatici",
       "qual": ""
     }
   ],
   "derived": [],
   "opera": "Vocabolario on line",
-  "fetched": "2026-11-27T08:07:08.405209",
-  "today": "2026-11-27",
+  "fetched": "2026-11-28T08:03:19.540103",
+  "today": "2026-11-28",
   "etimo_source": "lat.",
   "etimo_comps": [
     {
-      "form": "tricae -arum",
-      "gloss": "intrighi, imbrogli"
+      "form": "ἀνατίϑημι",
+      "gloss": "dedicare"
     }
   ],
   "etimo_xref": "",
-  "syllabic": "in·tri·cá·re",
-  "stress": 6
+  "syllabic": "ana·tè·ma",
+  "stress": 4
 }
